@@ -35,17 +35,18 @@ function text(block) {
         `
 }
 function columns(block) {
+    let html = '';
+    block.value.forEach(item => {
+       html += `
+                <div class="col-sm">
+                    ${item}
+                </div>
+       `
+    })
+
     return `
             <div class="row">
-                <div class="col-sm">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, rem.</p>
-                </div>
-                <div class="col-sm">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, rem.</p>
-                </div>
-                <div class="col-sm">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, rem.</p>
-                </div>
+               ${html} 
             </div>
         `
 }
